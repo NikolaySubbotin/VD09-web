@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Вход</h1>
+
+    <form method="post" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+
+        <!-- Поле для имени пользователя -->
+        <div class="form-group">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control") }}
+        </div>
+
+        <!-- Поле для пароля -->
+        <div class="form-group">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+        </div>
+
+        <!-- Кнопка отправки -->
+        <div class="form-group text-center">
+            {{ form.submit(class="btn btn-primary btn-lg btn-block") }}
+        </div>
+    </form>
+</div>
+{% endblock %}
